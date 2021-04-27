@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import { Component } from 'react';
 
 import styles from './SearchBar.module.css'
 
@@ -9,9 +9,9 @@ class SearchBar extends Component {
     }
 
     handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         this.setState({
-            [name]: value, 
+            [name]: value,
         })
     }
 
@@ -28,34 +28,33 @@ class SearchBar extends Component {
     }
 
 
-
     render() {
 
-        const {query} = this.state;
-        const {handleChange, handleSubmit} = this;
+        const { query } = this.state;
+        const { handleChange, handleSubmit } = this;
 
-        return ( 
+        return (
             <header className={styles.Searchbar}>
-            <form onSubmit={handleSubmit} className={styles.SearchForm}>
-                <button type="submit" className={styles.SearchFormButton}>
-                <span className={styles.SearchFormButtonLabel}>Search</span>
-                </button>
+                <form onSubmit={handleSubmit} className={styles.SearchForm}>
+                    <button type="submit" className={styles.SearchFormButton}>
+                        <span className={styles.SearchFormButtonLabel}>Search</span>
+                    </button>
 
-                <input
-                name='query'
-                value={query}
-                onChange={handleChange}
-                className={styles.SearchFormInput}
-                type="text"
-                autoComplete="off"
-                autoFocus
-                placeholder="Search images and photos"
-                />
-            </form>
+                    <input
+                        name='query'
+                        value={query}
+                        onChange={handleChange}
+                        className={styles.SearchFormInput}
+                        type="text"
+                        autoComplete="off"
+                        autoFocus
+                        placeholder="Search images and photos"
+                    />
+                </form>
             </header>
-     );
+        );
     }
-    
+
 }
- 
+
 export default SearchBar;
